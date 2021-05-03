@@ -18,7 +18,7 @@ pipeline {
         SECRET_FILE_ID = credentials('dockerid')
       }
     }
-
+    }
     stage ('push image') {
       steps {
         sh '''
