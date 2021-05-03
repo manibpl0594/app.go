@@ -14,9 +14,7 @@ pipeline {
     }
     stage ('Docker login') {
       steps {
-        sh '''
-        docker login -u manibpl0509 -p Dust@321D
-        '''
+       docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
       }
     }
 
@@ -34,5 +32,7 @@ pipeline {
         '''
         }
     }
+  }
+}
   }
 }
