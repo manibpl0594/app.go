@@ -2,7 +2,6 @@ pipeline {
   agent any
   environment {
     DOCKER_REPO = "manibpl0509/golang-app"
-    registryCredential = 'Dockerhub_id'
   }
 
   stages {
@@ -15,7 +14,7 @@ pipeline {
     }
     stage ('Docker login') {
       steps {
-        docker.withRegistry('https://hub.docker.com/', 'registryCredential')
+        docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
       }
     }
     stage ('push image') {
