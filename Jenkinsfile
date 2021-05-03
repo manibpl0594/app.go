@@ -14,9 +14,11 @@ pipeline {
     }
     stage ('Docker login') {
       steps {
-        docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
+        environment {
+        SECRET_FILE_ID = credentials('dockerid')
       }
     }
+
     stage ('push image') {
       steps {
         sh '''
