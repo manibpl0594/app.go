@@ -24,7 +24,6 @@ pipeline {
       steps {
         sh '''
         docker push ${DOCKER_REPO}:${BUILD_NUMBER}
-        docker push ${DOCKER_REPO}:${BUILD_NUMBER}
         '''
         }
     }
