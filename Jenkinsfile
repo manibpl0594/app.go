@@ -12,13 +12,8 @@ pipeline {
         '''
       }
     }
-    stage ('Docker login') {
-      steps {
-       docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
-      }
-    }
-
     stage ('push image') {
+       docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
       steps {
         sh '''
         docker push ${DOCKER_REPO}:${BUILD_NUMBER}
@@ -32,7 +27,5 @@ pipeline {
         '''
         }
     }
-  }
-}
   }
 }
