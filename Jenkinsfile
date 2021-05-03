@@ -2,6 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKER_REPO = "manibpl0509/golang-app"
+    SECRET_FILE_ID = credentials('dockerid')
   }
 
   stages {
@@ -12,13 +13,14 @@ pipeline {
         '''
       }
     }
-    stage ('Docker login') {
+   stage ('Docker login') {
       steps {
-        environment {
-        SECRET_FILE_ID = credentials('dockerid')
+        sh '''
+        docker login = SECRET_FILE_ID
+        '''
       }
     }
-    }
+
     stage ('push image') {
       steps {
         sh '''
@@ -34,5 +36,4 @@ pipeline {
         }
     }
   }
-}
 }
