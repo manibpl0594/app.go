@@ -16,7 +16,7 @@ pipeline {
    stage ('Docker login') {
       steps {
         sh '''
-        SECRET_FILE_ID
+        $SECRET_FILE_ID
         '''
       }
     }
