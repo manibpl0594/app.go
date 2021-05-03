@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKER_REPO = "manibpl0504/golang-app"
+    DOCKER_REPO = "manibpl0509/golang-app"
   }
 
   stages {
