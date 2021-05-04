@@ -1,6 +1,7 @@
 node {
-    properties([parameters([choice(choices: ['service1', 'service2'], description: '', name: 'Select Service')])])
-    if (select 'service1')
+    properties([parameters([choice(choices: ['service1', 'service2'], description: '', name: 'Choises')])])
+    when {
+      enviorment name: 'Choices', value: 'service1'}
     step{
     sh'''
     cd service1
