@@ -11,7 +11,6 @@ node {
     }
    }
    else if (Choises.equals("service2")){
-    sh ''' cd service2 '''
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
         def dockerfile = '/var/lib/jenkins/workspace/docker/service2/Dockerfile .'
