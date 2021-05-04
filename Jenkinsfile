@@ -4,6 +4,6 @@ node {
     sh ''' cd service1 ''
    }
    else if (Choices.equals("service2")){
-   sh ''' cd service1 ''
+   sh ''' cd service2 ''
 }
 }
