@@ -1,11 +1,49 @@
-node {
-    checkout scm
-
-    docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
-
-        def customImage = docker.build("manibpl0509/golang-app:${env.BUILD_ID}")
-
-        /* Push the container to the custom Registry */
-        customImage.push()
+pipeline {
+  agent any
+  environment {
+    DOCKER_REPO = "manibpl0509/golang-app"
+  }
+  
+  stages {
+    stage ('Choose service') {
+      input {
+        message 'choose service'
+        parameters {
+          choice choices:['service1','service2'], description: 'it will create docker file from service'
+         , name: 'Choices'
+        }
+      }
+      when {
+        environment name: 'Choices', value: 'service1'
+      }
+    stage ('Build Image') {
+      steps {
+        sh '''
+        docker build -t ${DOCKER_REPO}:${BUILD_NUMBER} .
+        '''
+      }
     }
+    stage ('Docker login') {
+      steps {
+        sh '''
+        docker login -u manibpl0509 -p Dust@321D
+        '''
+      }
+    }
+
+    stage ('push image') {
+      steps {
+        sh '''
+        docker push ${DOCKER_REPO}:${BUILD_NUMBER}
+        '''
+        }
+    }
+    stage ('Cleanup') {
+      steps {
+        sh '''
+        docker rmi ${DOCKER_REPO}:${BUILD_NUMBER} -f
+        '''
+        }
+    }
+  }
 }
