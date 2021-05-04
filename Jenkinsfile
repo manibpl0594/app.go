@@ -14,7 +14,6 @@
           cd /service1
           '''
       }
-  }
 node {
     checkout scm
 
