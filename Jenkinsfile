@@ -11,4 +11,8 @@ node {
         customImage.push()
     }
    }
+   elseif (Choises.equals("service2")){
+    sh ''' cd service2 '''
+    checkout scm
+   }
 }
