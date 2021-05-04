@@ -5,7 +5,7 @@ node {
     step{
     sh'''
     cd service1
-    ...
+    '''
     }
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
