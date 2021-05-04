@@ -1,4 +1,5 @@
-  stages {
+node {
+    stages {
       stage{'project selection'}
       input {
           message 'Hi: How are you'
@@ -14,7 +15,6 @@
           cd /service1
           '''
       }
-node {
     checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
