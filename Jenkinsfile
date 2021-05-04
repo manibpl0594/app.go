@@ -1,39 +1,11 @@
-pipeline {
-  agent any
-  environment {
-    DOCKER_REPO = "manibpl0509/golang-app"
-    SECRET_FILE_ID = credentials('dockerid')
-  }
+node {
+    checkout scm
 
-  stages {
-    stage ('Build Image') {
-      steps {
-        sh '''
-        docker build -t ${DOCKER_REPO}:${BUILD_NUMBER} .
-        '''
-      }
-    }
-   stage ('Docker login') {
-      steps {
-        sh '''
-        $SECRET_FILE_ID
-        '''
-      }
-    }
+    docker.withRegistry('https://registry.example.com', 'credentials-id') {
 
-    stage ('push image') {
-      steps {
-        sh '''
-        docker push ${DOCKER_REPO}:${BUILD_NUMBER}
-        '''
-        }
+        def customImage = docker.build("my-image:${env.BUILD_ID}")
+
+        /* Push the container to the custom Registry */
+        customImage.push()
     }
-    stage ('Cleanup') {
-      steps {
-        sh '''
-        docker rmi ${DOCKER_REPO}:${BUILD_NUMBER} -f
-        '''
-        }
-    }
-  }
 }
