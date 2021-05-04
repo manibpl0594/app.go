@@ -1,5 +1,12 @@
 node {
     properties([parameters([choice(choices: ['service1', 'service2'], description: '', name: 'Select Service')])])
+    if { select service1
+    }
+    step{
+    sh'''
+    cd service1
+    ...
+    }
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
 
