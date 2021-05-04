@@ -1,3 +1,20 @@
+  stages {
+      stage{'project selection'}
+      input {
+          message 'Hi: How are you'
+          parameters {
+              choice choices: ['service1', 'service2'], description: '', name: 'Select Service'
+          }
+      }
+      when {
+          environment name: 'Select Service', value: 'service1'
+      }
+      steps{
+          sh '''
+          cd /service1
+          '''
+      }
+  }
 node {
     checkout scm
 
@@ -7,5 +24,6 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+    }
     }
 }
