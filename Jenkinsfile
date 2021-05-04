@@ -4,7 +4,8 @@ node {
         sh ''' cd /var/lib/jenkins/workspace/docker/service1/ '''
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
-        def customImage = docker.build("manibpl0509/trivy:${env.BUILD_ID}")
+        def dockerfile = 'Dockerfile'
+        def customImage = docker.build("manibpl0509/trivy:${env.BUILD_ID}" "-f ${dockerfile} ./dockerfiles")
 
         /* Push the container to the custom Registry */
         customImage.push()
