@@ -1,10 +1,9 @@
 node {
     properties([parameters([choice(choices: ['service1', 'service2'], description: '', name: 'Choises')])])
    if (Choises.equals("service1")){
-    sh ''' cd /var/lib/jenkins/workspace/docker/service1 '''
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
-
+        sh ''' cd /var/lib/jenkins/workspace/docker/service1 '''
         def customImage = docker.build("manibpl0509/trivy:${env.BUILD_ID}")
 
         /* Push the container to the custom Registry */
