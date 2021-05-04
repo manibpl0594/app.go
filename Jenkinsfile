@@ -1,6 +1,6 @@
 node {
     properties([parameters([choice(choices: ['service1', 'service2'], description: '', name: 'Choises')])])
-    if '('Choices' = 'service1')'
+    if ('select' 'service1')
     then {
     sh '''
     cd service1
