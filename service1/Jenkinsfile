@@ -1,3 +1,5 @@
+properties([parameters([choice(choices: ['service1', 'service2'], description: '', name: 'Select Service')])])
+
 node {
     checkout scm
 
@@ -7,5 +9,6 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+    }
     }
 }
