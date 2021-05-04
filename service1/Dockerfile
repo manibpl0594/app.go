@@ -1,6 +1,11 @@
-FROM golang:alpine
+FROM alpine
+
 WORKDIR /app
-COPY app.go .
-RUN go build app.go
-CMD ./app
-EXPOSE 8888
+
+RUN apk update && apk add wget
+
+ADD https://github.com/aquasecurity/trivy/releases/download/v0.16.0/trivy_0.16.0_Linux-64bit.tar.gz .
+
+RUN tar -xvf trivy_0.16.0_Linux-64bit.tar.gz
+
+ENTRYPOINT ["./trivy"]
