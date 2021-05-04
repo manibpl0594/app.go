@@ -1,12 +1,8 @@
-node {
-    stages {
-      stage{'project selection'}
-      input {
-          message 'Hi: How are you'
-          parameters {
+         properties{
+                parameters {
               choice choices: ['service1', 'service2'], description: '', name: 'Select Service'
           }
-      }
+      }       
       when {
           environment name: 'Select Service', value: 'service1'
       }
@@ -15,7 +11,8 @@ node {
           cd /service1
           '''
       }
-    checkout scm
+node {
+      checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
 
