@@ -22,6 +22,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service3")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -30,6 +31,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service4")){
     checkout scm
@@ -49,6 +51,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service6")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -57,6 +60,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service7")){
     checkout scm
@@ -67,6 +71,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service8")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -75,6 +80,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service9")){
     checkout scm
@@ -85,6 +91,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service10")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -93,6 +100,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service11")){
     checkout scm
@@ -103,6 +111,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service12")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -111,6 +120,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service13")){
     checkout scm
@@ -121,6 +131,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service14")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -129,6 +140,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service15")){
     checkout scm
@@ -139,6 +151,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service16")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -147,6 +160,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service17")){
     checkout scm
@@ -157,6 +171,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service18")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -165,6 +180,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service19")){
     checkout scm
@@ -175,6 +191,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service20")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -183,6 +200,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service21")){
     checkout scm
@@ -193,6 +211,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service22")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -201,6 +220,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service23")){
     checkout scm
@@ -211,6 +231,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service24")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -219,6 +240,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service25")){
     checkout scm
@@ -229,6 +251,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service26")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -237,6 +260,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service27")){
     checkout scm
@@ -247,6 +271,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service28")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -256,6 +281,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service29")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -264,6 +290,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+   }
    }
    else if (Choises.equals("service30")){
     checkout scm
