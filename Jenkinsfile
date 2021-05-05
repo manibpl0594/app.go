@@ -42,6 +42,7 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
    }
+   }
    else if (Choises.equals("service5")){
     checkout scm
     docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
