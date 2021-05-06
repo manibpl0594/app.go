@@ -13,7 +13,7 @@
         parameters:[choice(choices: CHOICES, description: 'Select your service',name: 'CHOICES')]
         echo "Deploying ${env.Module}."
         echo "${Module}"
-        sh cd '$Module'
+        def dir = sh cd '$Module'
         docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
         def customImage = docker.build("manibpl0509/trivy", "-f Dockerfile .")
         /* Push the container to the custom Registry */
@@ -22,4 +22,4 @@
                 }
             }
         }
-       }
+       } 
