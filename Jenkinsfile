@@ -10,7 +10,7 @@
    'service16','service17','service18','service19','service20','service21','service22','service23','service24','service25',
    'service26','service27','service28','service29','service30']
         env.Module = input message: 'what are we deploying today?',ok : 'Deploy',
-        parameters:[choice(choices: CHOICES, description: 'Select your service')]
+        properties([parameters([choice(choices: [CHOICES], description: '')])])
         echo "Deploying ${env.Module}."
         echo "${Module}"
         sh cd "${Module}"
