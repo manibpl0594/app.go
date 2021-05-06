@@ -17,7 +17,8 @@
         sh "pwd"
         sh 'ls -a'
          } 
-            def customImage = docker.build(manibpl0509/trivy, -f Dockerfile .)
+        def dockerfile = '/var/lib/jenkins/workspace/docker/$Module/Dockerfile .
+        def customImage = docker.build("manibpl0509/trivy", "-f ${dockerfile}")
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
         }
