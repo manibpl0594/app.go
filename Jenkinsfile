@@ -4,9 +4,9 @@ node {
    'service16','service17','service18','service19','service20','service21','service22','service23','service24','service25',
    'service26','service27','service28','service29','service30'], description: '', name: 'Choises')])])
     }
-       def $choice = []
-       sh cd ''' $choice
-       '''
+       {
+           sh cd $Choices
+       }
        checkout scm {
        docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
          
