@@ -3,7 +3,7 @@
     pipeline{
        agent {label'agent'} 
        stages {
-          stage {"build"} {
+          stage ("build") {
             steps {
                 script {
                  CHOICES = ['service1', 'service2','service3','service4','service5','service6',
