@@ -4,14 +4,14 @@ node {
    'service16','service17','service18','service19','service20','service21','service22','service23','service24','service25',
    'service26','service27','service28','service29','service30'], description: '', name: 'Choises')])])
     }
-   if (Choises.equals("$Choices")){
-    checkout scm
-    docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
-        sh cd $Choices
+    def name = $Choices
+    sh ''' cd $name
+       checkout scm {
+       docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
+         
         def dockerfile = 'Dockerfile .'
         def customImage = docker.build("manibpl0509/trivy-v2:${env.BUILD_ID}", "-f ${dockerfile}")
 
         /* Push the container to the custom Registry */
         customImage.push()
-    }
-   }
+}
