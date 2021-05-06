@@ -1,4 +1,4 @@
-    CHOICES = [];
+ CHOICES = [];
     pipeline{
        agent { label 'master'} 
        stages {
@@ -15,7 +15,7 @@
          Path = sh "pwd"
          }
         docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
-        def customImage = docker.build("manibpl0509/trivy", '-f ${Path}/Dockerfile .')
+        def customImage = docker.build("manibpl0509/trivy", '-f $Path/Dockerfile .')
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
         }
