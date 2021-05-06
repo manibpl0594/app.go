@@ -8,7 +8,7 @@ node {
     }
    if (Choises.equals("service1")){
     
-        def dockerfile = '/var/lib/jenkins/workspace/docker-pipeline/service1/Dockerfile .'
+        def dockerfile = '/var/lib/jenkins/workspace/docker1/service1/Dockerfile .'
         def customImage = docker.build("manibpl0509/trivy-v2:${env.BUILD_ID}", "-f ${dockerfile}")
 
         /* Push the container to the custom Registry */
