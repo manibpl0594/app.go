@@ -18,7 +18,7 @@
         sh 'ls -a'
          } 
         def dockerfile = '/var/lib/jenkins/workspace/docker/$Module/Dockerfile .'
-        def customImage = docker.build("manibpl0509/trivy" .)
+        def customImage = docker.build("manibpl0509/trivy", .)
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
         }
