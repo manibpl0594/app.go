@@ -12,10 +12,11 @@
         env.Module = input message: 'what are we deploying today?',ok : 'Deploy',
         parameters:[choice(choices: CHOICES, description: 'Select your service',name: 'TAG')]
         sh ''' cd $Module  '''      
-        docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
+        docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
         def customImage = docker.build("manibpl0509/trivy", "-f Dockerfile .")
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
+        }
           }    
                 }
             }
