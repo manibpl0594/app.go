@@ -1,4 +1,4 @@
-    CHOICES = [];
+ CHOICES = [];
     pipeline{
        agent { label 'master'} 
        stages {
@@ -11,11 +11,11 @@
    'service26','service27','service28','service29','service30']
         env.Module = input message: 'what are we deploying today?',ok : 'Deploy',
         parameters:[choice(choices: CHOICES, description: 'Select your service',name: 'TAG')]
-        dir("${env.Module}"){
-        sh "pwd"
-         }
+        
         docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
-        def path = sh cd $Module   
+         dir("${env.Module}"){
+        sh "pwd"
+         } 
         def customImage = docker.build("manibpl0509/trivy", '-f Dockerfile .')
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
@@ -24,4 +24,4 @@
                 }
             }
         }
-       }
+       } 
