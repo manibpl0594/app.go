@@ -6,6 +6,7 @@ node {
     }
     def name = $Choices
     sh ''' cd $name
+    '''
        checkout scm {
        docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
          
