@@ -15,8 +15,7 @@
     sh "pwd"
          }
         docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
-        def dockerfile = '$PWD/Dockerfile .'    
-        def customImage = docker.build("manibpl0509/trivy", "-f ${dockerfile}")
+        def customImage = docker.build("manibpl0509/trivy", '-f Dockerfile .')
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
         }
