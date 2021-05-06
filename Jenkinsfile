@@ -1,5 +1,6 @@
     CHOICES = [];
     pipeline{
+       agent {label 'agent'} 
        stages {
           stage {'build'} {
             steps {
