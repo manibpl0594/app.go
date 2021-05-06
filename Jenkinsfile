@@ -17,7 +17,7 @@
         sh "pwd"
         sh 'ls -a'
          } 
-            def customImage = docker.build(manibpl0509/trivy service1/Dockerfile )
+            def customImage = docker.build(manibpl0509/trivy -f Dockerfile .)
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
         }
