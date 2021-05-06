@@ -4,7 +4,6 @@
        stages {
           stage {'build'} {
             steps {
-                script {
                  CHOICES = ['service1', 'service2','service3','service4','service5','service6',
    'service7','service8','service9','service10','service11','service12','service13','service14','service15',
    'service16','service17','service18','service19','service20','service21','service22','service23','service24','service25',
@@ -19,6 +18,4 @@
                 }
             }
         }
-       } 
-        
-    }
+       }
