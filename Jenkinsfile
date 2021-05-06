@@ -11,7 +11,7 @@
    'service26','service27','service28','service29','service30']
         env.Module = input message: 'what are we deploying today?',ok : 'Deploy',
         parameters:[choice(choices: CHOICES, description: 'Select your service',name: 'TAG')]
-        dir('Module'){
+        dir('$Module'){
     sh "pwd"
          }
         docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
@@ -23,4 +23,4 @@
                 }
             }
         }
-       } 
+       }
