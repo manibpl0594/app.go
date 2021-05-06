@@ -1,8 +1,8 @@
     CHOICES = [];
     pipeline{
-       agent {label 'agent'} 
+       agent {'any'} 
        stages {
-          stage {'build'} { 
+          stage {'build'} {
             steps {
                 script {
                  CHOICES = ['service1', 'service2','service3','service4','service5','service6',
@@ -10,7 +10,7 @@
    'service16','service17','service18','service19','service20','service21','service22','service23','service24','service25',
    'service26','service27','service28','service29','service30']
         env.Module = input message: 'what are we deploying today?',ok : 'Deploy',
-        parameters:[choice(choices: CHOICES, description: 'Select your service')]
+        parameters:[choice(choices: [CHOICES], description: 'Select your service')]
         echo "$Module"
         sh cd "${Module}"
         docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id')
@@ -22,4 +22,4 @@
                 }
             }
         }
-       } 
+       }
