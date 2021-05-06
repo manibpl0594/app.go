@@ -1,6 +1,6 @@
     CHOICES = [];
     pipeline{
-       agent {'any'} 
+       agent {label'agent'} 
        stages {
           stage {'build'} {
             steps {
@@ -17,7 +17,6 @@
         def customImage = docker.build("manibpl0509/trivy", "-f Dockerfile .")
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
-          
           }    
                 }
             }
