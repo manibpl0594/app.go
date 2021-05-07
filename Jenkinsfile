@@ -15,7 +15,7 @@
         docker.withRegistry('https://registry.hub.docker.com', 'Dockerhub_id') {
          dir("${env.Module}"){
         sh "pwd"
-        def customImage = docker.build("manibpl0509/trivy", "-f Dockerfile .")
+        def customImage = docker.build("manibpl0509/$Module", "-f Dockerfile .")
         /* Push the container to the custom Registry */
         customImage.push("${env.BUILD_NUMBER}")
          } 
